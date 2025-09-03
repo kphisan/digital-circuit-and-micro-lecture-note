@@ -1,0 +1,29 @@
+name: Build Markdown→LaTeX PDF
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Pandoc & TeX (XeLaTeX) and Thai fonts
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc texlive-xetex texlive-latex-recommended texlive-latex-extra                                   texlive-fonts-recommended texlive-lang-other                                   fonts-noto fonts-thai-tlwg
+
+      - name: Build PDF
+        run: |
+          make
+
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: book-pdf
+          path: book/main.pdf
