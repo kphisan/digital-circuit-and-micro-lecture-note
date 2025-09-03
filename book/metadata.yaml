@@ -1,0 +1,23 @@
+---
+title: "ตัวอย่างหนังสือ (Markdown → LaTeX)"
+author: "Your Name"
+lang: th
+date: "\\today"
+papersize: a4
+fontsize: 12pt
+geometry: margin=1in
+documentclass: book
+toc: true
+toc-depth: 2
+# Use xelatex for Thai script
+pdf-engine: xelatex
+mainfont: "TeX Gyre Pagella"
+monofont: "JetBrains Mono"
+# Thai fonts (ensure installed on CI runner)
+CJKmainfont: "Noto Serif Thai"
+linkcolor: blue
+colorlinks: true
+# bibliography
+bibliography: references.bib
+link-citations: true
+---
