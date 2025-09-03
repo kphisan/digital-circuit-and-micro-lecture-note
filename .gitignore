@@ -1,0 +1,21 @@
+# Build artifacts
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.toc
+*.synctex.gz
+*.xdv
+*.nav
+*.snm
+*.lof
+*.lot
+
+# Outputs
+book/main.pdf
+book/main.tex
